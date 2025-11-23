@@ -1,0 +1,146 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Data Dictionary</title>
+    <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:24px}
+    table{border-collapse:collapse;width:100%}
+    td,th{border:1px solid #ddd;padding:6px} th{background:#eee}
+    </style>
+    </head>
+    <body>
+    <h1>Data Dictionary</h1>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Colonna</th>
+      <th>Descrizione</th>
+      <th>Tipo</th>
+      <th>Unità</th>
+      <th>Cardinalità</th>
+      <th>Null (n)</th>
+      <th>Null (%)</th>
+      <th>Esempi</th>
+      <th>Regole/Controlli</th>
+      <th>Note</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th>Valori ammessi (top10)</th>
+      <th>Valori ammessi (ordine)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code</td>
+      <td>Codice materiale univoco (alfanumerico).</td>
+      <td>string</td>
+      <td></td>
+      <td>77</td>
+      <td>1</td>
+      <td>0.31</td>
+      <td>CCB, CCM, SLANT, SLCLM, SLCOLRIT628</td>
+      <td>Solo A–Z e 0–9; maiuscolo; non vuoto nei record validi.</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>Descrizione testuale del materiale.</td>
+      <td>string</td>
+      <td></td>
+      <td>99</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>Componenti Chimiche di In, Componenti Chimiche di In, Antistatico "LUBE 80" (Ma, Cloruro di Metilene (un f, Colore Spray SF-13-802 (G</td>
+      <td>Testo libero; evitare nulli per record attivi.</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>uom</td>
+      <td>Unità di misura standardizzata per le quantità.</td>
+      <td>string</td>
+      <td>—</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>KG, PZ</td>
+      <td>Valori ammessi: KG (default).</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>KG, PZ</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>stock</td>
+      <td>Giacenza a fine periodo (quantità fisica/contabile).</td>
+      <td>float</td>
+      <td>pezzi o unità coerenti con uom</td>
+      <td>142</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0, 1.9754224922508e-11, 8.688694208558445e-11, 3.629246236869221e-11, 4.6</td>
+      <td>Valore numerico, non negativo.</td>
+      <td></td>
+      <td>0.0</td>
+      <td>26627.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>real</td>
+      <td>Giacenza reale (conteggio fisico o stock effettivo).</td>
+      <td>float</td>
+      <td>pezzi o unità coerenti con uom</td>
+      <td>31</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0, 310.0, 145.0, 475.0, 104.4</td>
+      <td>Valore numerico, non negativo.</td>
+      <td></td>
+      <td>0.0</td>
+      <td>11519.16</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>outgoing</td>
+      <td>Quantità in uscita (prelievi/spedizioni) nel periodo.</td>
+      <td>float</td>
+      <td>pezzi o unità coerenti con uom</td>
+      <td>132</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0, 1.9754224922508e-11, 8.688694208558445e-11, 3.629246236869221e-11, 4.6</td>
+      <td>Valore numerico, non negativo.</td>
+      <td></td>
+      <td>0.0</td>
+      <td>26627.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>mese_rif</td>
+      <td>Mese di riferimento del record (GENNAIO…AGOSTO).</td>
+      <td>string</td>
+      <td></td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>GENNAIO, FEBBRAIO, APRILE, MAGGIO, GIUGNO</td>
+      <td>Valori ammessi: GENNAIO, FEBBRAIO, APRILE, MAGGIO, GIUGNO, LUGLIO, AGOSTO.</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>NaN</td>
+      <td>GENNAIO, FEBBRAIO, APRILE, MAGGIO, GIUGNO, LUGLIO, AGOSTO</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+    <p>Fonte: ETL_QA/dataset_finale_ETL_QA.xlsx</p>
+    </body></html>

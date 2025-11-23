@@ -1,0 +1,17 @@
+metric,before,after,delta
+dups,,0,0
+neg_outgoing,,0,0
+neg_real,,0,0
+neg_stock,,0,0
+null_outgoing,,0,0
+null_real,,0,0
+null_stock,,0,0
+rows,,324,324
+dups,0,,0
+neg_outgoing,27,,-27
+neg_real,0,,0
+neg_stock,76,,-76
+null_outgoing,4,,-4
+null_real,22,,-22
+null_stock,2,,-2
+rows,324,,-324
