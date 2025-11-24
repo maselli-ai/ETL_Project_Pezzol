@@ -41,7 +41,7 @@ if raw_df.empty:
 compare = pd.merge(raw_df, clean_df, on="file", how="outer",
                    suffixes=("_raw", "_clean")).fillna(0)
 
-# ---------- Grafico 1: righe ----------
+# Grafico 1: righe 
 plt.figure(figsize=(10,6))
 x = range(len(compare))
 plt.bar(x, compare["righe_raw"], label="Prima")
@@ -55,7 +55,7 @@ plt.tight_layout()
 plt.savefig(OUT_DIR / "confronto_righe.png")
 plt.close()
 
-# ---------- Grafico 2: valori nulli ----------
+# Grafico 2: valori nulli 
 plt.figure(figsize=(10,6))
 x = range(len(compare))
 plt.bar(x, compare["valori_nulli_raw"], label="Nulli prima")
@@ -69,7 +69,7 @@ plt.tight_layout()
 plt.savefig(OUT_DIR / "confronto_nulli.png")
 plt.close()
 
-# ---------- Grafico 3: duplicati e negativi ----------
+#  Grafico 3: duplicati e negativi 
 plt.figure(figsize=(10,6))
 width = 0.2
 x = range(len(compare))
@@ -93,3 +93,4 @@ plt.close()
 # salva anche una tabella di confronto
 compare.to_excel(OUT_DIR / "confronto_pre_post.xlsx", index=False)
 print("Grafici e confronto salvati in:", OUT_DIR)
+
