@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 
-# Cartelle e file di input (ordine cronologico GEN → AGO)
+# Cartelle e file di input (ordine cronologico GEN - AGO)
 
 HERE = Path(__file__).resolve().parent
 INPUT_DIR = (HERE / "dati_puliti").resolve()
@@ -140,7 +140,7 @@ for k in sorted(set(m_before) | set(m_after)):
 qa_df = pd.DataFrame(qa_rows)
 qa_df.to_csv(OUT_QA_SUMMARY, index=False)
 
-# --- Tabelle di riepilogo per mese (per mostrare che ci sono tutti i mesi) ---
+# Tabelle di riepilogo per mese (per mostrare che ci sono tutti i mesi) 
 by_month = (
     clean.groupby("mese_rif")
          .agg(righe=("code","size"), codici_unici=("code","nunique"))
@@ -148,7 +148,7 @@ by_month = (
 # ordina i mesi in modo cronologico
 by_month = by_month.reindex(MONTH_ORDER).reset_index().rename(columns={"mese_rif":"mese"})
 
-# --- HTML senza data di generazione ---
+# HTML senza data di generazione 
 html = f"""<!DOCTYPE html>
 <html><head><meta charset="utf-8"><title>Data Cleaning & QA Summary</title>
 <style>
@@ -181,3 +181,4 @@ print("Creati:")
 print(f" - {OUT_DATASET}")
 print(f" - {OUT_QA_SUMMARY}")
 print(f" - {OUT_HTML}")
+
