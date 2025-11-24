@@ -94,7 +94,7 @@ with pd.ExcelWriter(OUT_DIR / "kpi_summary.xlsx", engine="openpyxl") as w:
     over_under_dist.to_excel(w, sheet_name="over_understock", index=False)
     rot_dist.to_excel(w, sheet_name="rotazione_classi", index=False)
 
-# ---- Grafici (matplotlib) ----
+#  Grafici (matplotlib) 
 # 1) Turnover annuo per mese
 plt.figure(figsize=(9,5))
 plt.plot(turn_by_month["mese_rif"], turn_by_month["turnover_annuo"], marker="o")
@@ -137,7 +137,7 @@ plt.tight_layout()
 plt.savefig(OUT_DIR / "kpi_rotation_classes.png")
 plt.close()
 
-# ---- Report HTML sintetico ----
+# Report HTML sintetico 
 html = f"""
 <!doctype html><html><head><meta charset="utf-8">
 <title>KPI logistici (gen–ago 2025)</title>
@@ -173,3 +173,4 @@ print(" -", OUT_DIR / "kpi_dio_trend.png")
 print(" -", OUT_DIR / "kpi_over_under_bar.png")
 print(" -", OUT_DIR / "kpi_rotation_classes.png")
 print(" -", OUT_DIR / "kpi_report.html")
+
